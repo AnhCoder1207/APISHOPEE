@@ -1,3 +1,4 @@
+import { getRequestListener } from '@hono/node-server'
 import type { ExecutionContext } from 'hono'
 import app from '../src/index'
 import type { AppBindings } from '../src/lib/types'
@@ -14,7 +15,7 @@ function getClientIp(request: Request): string {
     || 'unknown'
 }
 
-export default async function handler(request: Request): Promise<Response> {
+const vercelHandler = getRequestListener(async (request, nodeBindings) => {
   const pendingTasks: Promise<unknown>[] = []
   const executionContext: ExecutionContext = {
     props: {},
@@ -32,4 +33,6 @@ export default async function handler(request: Request): Promise<Response> {
   const response = await app.fetch(request, bindings, executionContext)
   await Promise.allSettled(pendingTasks)
   return response
-}
+})
+
+export default vercelHandler
