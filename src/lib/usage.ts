@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
-import { getDatabase } from './db'
-import { AppError } from './errors'
-import type { AppBindings } from './types'
+import { getDatabase } from './db.js'
+import { AppError } from './errors.js'
+import type { AppBindings } from './types.js'
 
 type QuotaRow = {
   monthly_quota: number

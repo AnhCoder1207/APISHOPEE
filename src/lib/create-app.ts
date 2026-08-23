@@ -1,7 +1,7 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { ZodError } from 'zod'
-import { AppError } from './errors'
-import type { AppBindings, AppOpenAPI } from './types'
+import { AppError } from './errors.js'
+import type { AppBindings, AppOpenAPI } from './types.js'
 
 export function createRouter(): AppOpenAPI {
   return new OpenAPIHono<AppBindings>({

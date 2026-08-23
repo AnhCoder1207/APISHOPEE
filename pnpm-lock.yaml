@@ -17,6 +17,9 @@ importers:
       '@hono/zod-openapi':
         specifier: ^1.6.1
         version: 1.6.1(hono@4.13.3)(zod@4.4.3)
+      '@types/node':
+        specifier: ^26.2.0
+        version: 26.2.0
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
@@ -30,9 +33,6 @@ importers:
         specifier: ^4.4.3
         version: 4.4.3
     devDependencies:
-      '@types/node':
-        specifier: ^26.2.0
-        version: 26.2.0
       esbuild:
         specifier: ^0.28.1
         version: 0.28.1

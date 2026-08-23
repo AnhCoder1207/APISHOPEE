@@ -1,7 +1,7 @@
 import { getRequestListener } from '@hono/node-server'
 import type { ExecutionContext } from 'hono'
-import app from '../src/index'
-import type { AppBindings } from '../src/lib/types'
+import app from '../src/index.js'
+import type { AppBindings } from '../src/lib/types.js'
 
 const runtimeEnvironment = (
   globalThis as typeof globalThis & {

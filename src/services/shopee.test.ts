@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { convertShopeeLinks, isShopeeAuthError } from './shopee'
+import { convertShopeeLinks, isShopeeAuthError } from './shopee.js'
 
 test('does not classify a logged-in Shopee rejection as an expired cookie', () => {
   assert.equal(isShopeeAuthError(403, { error: 90309999, is_login: true }), false)

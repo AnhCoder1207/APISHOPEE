@@ -1,11 +1,11 @@
 import { z } from 'zod'
 import type { Context } from 'hono'
-import { createRouter } from '../../lib/create-app'
-import { createSession, requireSession, requireTrustedOrigin, revokeSession } from '../../lib/auth'
-import { getDatabase } from '../../lib/db'
-import { hashPassword, sha256, verifyPassword } from '../../lib/crypto'
-import { AppError } from '../../lib/errors'
-import type { AppBindings } from '../../lib/types'
+import { createRouter } from '../../lib/create-app.js'
+import { createSession, requireSession, requireTrustedOrigin, revokeSession } from '../../lib/auth.js'
+import { getDatabase } from '../../lib/db.js'
+import { hashPassword, sha256, verifyPassword } from '../../lib/crypto.js'
+import { AppError } from '../../lib/errors.js'
+import type { AppBindings } from '../../lib/types.js'
 
 const registerSchema = z.object({
   name: z.string().trim().min(2).max(80),

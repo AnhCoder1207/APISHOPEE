@@ -1,5 +1,5 @@
-import { createApp } from './lib/create-app'
-import router from './routes'
+import { createApp } from './lib/create-app.js'
+import router from './routes/index.js'
 
 const app = createApp()
 

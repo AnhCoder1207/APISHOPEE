@@ -1,4 +1,4 @@
-import { AppError } from './errors'
+import { AppError } from './errors.js'
 
 const TARGET_HOST = 'affiliate.shopee.vn'
 const MAX_COOKIE_FILE_BYTES = 512_000

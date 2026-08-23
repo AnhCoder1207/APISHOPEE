@@ -1,5 +1,5 @@
 import postgres from 'postgres'
-import type { AppBindings } from './types'
+import type { AppBindings } from './types.js'
 
 export type Database = ReturnType<typeof postgres>
 

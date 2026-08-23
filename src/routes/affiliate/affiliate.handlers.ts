@@ -1,5 +1,5 @@
-import type { AppRouteHandler } from '../../lib/types'
-import type { ConversionReportsRoute, ConvertLinkRoute } from './affiliate.routes'
+import type { AppRouteHandler } from '../../lib/types.js'
+import type { ConversionReportsRoute, ConvertLinkRoute } from './affiliate.routes.js'
 
 // 1. Handler: Convert Link Affiliate (Hỗ trợ tối đa 5 link & advancedLinkParams subId1 -> subId5)
 export const convertLinkHandler: AppRouteHandler<ConvertLinkRoute> = async (c) => {

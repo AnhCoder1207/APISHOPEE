@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { AppError } from './errors'
-import { parseShopeeCookieFile } from './shopee-cookie'
+import { AppError } from './errors.js'
+import { parseShopeeCookieFile } from './shopee-cookie.js'
 
 const future = 2_000_000_000
 

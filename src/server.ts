@@ -2,9 +2,9 @@ import { serve, type HttpBindings } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { config } from 'dotenv'
 import { Hono, type ExecutionContext } from 'hono'
-import workerApp from './index'
-import { closeDatabases } from './lib/db'
-import type { AppBindings } from './lib/types'
+import workerApp from './index.js'
+import { closeDatabases } from './lib/db.js'
+import type { AppBindings } from './lib/types.js'
 
 const envFile = process.env.ENV_FILE || (process.env.NODE_ENV === 'development' ? '.dev.vars' : '.env.production')
 config({ path: envFile, quiet: true })

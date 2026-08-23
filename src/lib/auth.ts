@@ -1,10 +1,10 @@
 import { deleteCookie, getCookie, setCookie } from 'hono/cookie'
 import { createMiddleware } from 'hono/factory'
 import type { Context } from 'hono'
-import { getDatabase } from './db'
-import { AppError } from './errors'
-import { randomToken, sha256 } from './crypto'
-import type { AppBindings, AuthContext } from './types'
+import { getDatabase } from './db.js'
+import { AppError } from './errors.js'
+import { randomToken, sha256 } from './crypto.js'
+import type { AppBindings, AuthContext } from './types.js'
 
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30
 

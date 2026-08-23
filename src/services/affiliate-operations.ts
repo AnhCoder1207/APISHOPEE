@@ -1,16 +1,16 @@
 import type { Context } from 'hono'
-import { decryptSecret } from '../lib/crypto'
-import { getDatabase } from '../lib/db'
-import { AppError } from '../lib/errors'
-import type { AppBindings } from '../lib/types'
-import { assertMonthlyQuota, recordUsage } from '../lib/usage'
+import { decryptSecret } from '../lib/crypto.js'
+import { getDatabase } from '../lib/db.js'
+import { AppError } from '../lib/errors.js'
+import type { AppBindings } from '../lib/types.js'
+import { assertMonthlyQuota, recordUsage } from '../lib/usage.js'
 import {
   convertShopeeLinks,
   getShopeeConversionReport,
   isShopeeAuthError,
   type ConversionReportInput,
   type ConvertLinksInput,
-} from './shopee'
+} from './shopee.js'
 
 type ConnectionRow = {
   id: string

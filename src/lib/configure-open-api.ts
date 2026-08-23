@@ -1,5 +1,5 @@
 import { swaggerUI } from '@hono/swagger-ui'
-import type { AppOpenAPI } from './types'
+import type { AppOpenAPI } from './types.js'
 
 function getYesterdayInVietnam(): string {
   const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000)

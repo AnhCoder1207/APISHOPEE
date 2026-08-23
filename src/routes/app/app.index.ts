@@ -1,12 +1,12 @@
 import { z } from 'zod'
-import { createRouter } from '../../lib/create-app'
-import { requireSession, requireTrustedOrigin } from '../../lib/auth'
-import { decryptSecret, encryptSecret, randomToken, sha256 } from '../../lib/crypto'
-import { getDatabase } from '../../lib/db'
-import { AppError } from '../../lib/errors'
-import { parseShopeeCookieFile } from '../../lib/shopee-cookie'
-import { performConversionReport, performLinkConversion } from '../../services/affiliate-operations'
-import { getShopeeConversionReport, isShopeeAuthError } from '../../services/shopee'
+import { createRouter } from '../../lib/create-app.js'
+import { requireSession, requireTrustedOrigin } from '../../lib/auth.js'
+import { decryptSecret, encryptSecret, randomToken, sha256 } from '../../lib/crypto.js'
+import { getDatabase } from '../../lib/db.js'
+import { AppError } from '../../lib/errors.js'
+import { parseShopeeCookieFile } from '../../lib/shopee-cookie.js'
+import { performConversionReport, performLinkConversion } from '../../services/affiliate-operations.js'
+import { getShopeeConversionReport, isShopeeAuthError } from '../../services/shopee.js'
 
 const connectionSchema = z.object({
   name: z.string().trim().min(2).max(80),

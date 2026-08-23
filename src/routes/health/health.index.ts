@@ -1,6 +1,6 @@
-import { createRouter } from '../../lib/create-app'
-import { healthHandler } from './health.handlers'
-import { healthRoute } from './health.routes'
+import { createRouter } from '../../lib/create-app.js'
+import { healthHandler } from './health.handlers.js'
+import { healthRoute } from './health.routes.js'
 
 const router = createRouter().openapi(healthRoute, healthHandler)
 

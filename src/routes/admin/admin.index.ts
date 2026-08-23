@@ -1,11 +1,11 @@
 import { z } from 'zod'
 import type { Context } from 'hono'
-import { createRouter } from '../../lib/create-app'
-import { requireAdmin, requireSession, requireTrustedOrigin } from '../../lib/auth'
-import { getDatabase } from '../../lib/db'
-import { sha256 } from '../../lib/crypto'
-import { AppError } from '../../lib/errors'
-import type { AppBindings } from '../../lib/types'
+import { createRouter } from '../../lib/create-app.js'
+import { requireAdmin, requireSession, requireTrustedOrigin } from '../../lib/auth.js'
+import { getDatabase } from '../../lib/db.js'
+import { sha256 } from '../../lib/crypto.js'
+import { AppError } from '../../lib/errors.js'
+import type { AppBindings } from '../../lib/types.js'
 
 const userListSchema = z.object({
   query: z.string().trim().max(100).default(''),

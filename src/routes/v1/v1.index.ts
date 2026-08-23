@@ -1,8 +1,8 @@
 import { z } from 'zod'
-import { createRouter } from '../../lib/create-app'
-import { requireApiKey } from '../../lib/auth'
-import { AppError } from '../../lib/errors'
-import { performConversionReport, performLinkConversion } from '../../services/affiliate-operations'
+import { createRouter } from '../../lib/create-app.js'
+import { requireApiKey } from '../../lib/auth.js'
+import { AppError } from '../../lib/errors.js'
+import { performConversionReport, performLinkConversion } from '../../services/affiliate-operations.js'
 
 const subIdSchema = z.string().max(100).regex(/^[A-Za-z0-9]*$/, 'Sub ID chỉ được chứa chữ và số').optional()
 
