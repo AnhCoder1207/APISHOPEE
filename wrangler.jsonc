@@ -8,7 +8,7 @@
     "mode": "smart"
   },
   "assets": {
-    "directory": "./public",
+    "directory": "./dist/web",
     "not_found_handling": "single-page-application"
   },
   "observability": {

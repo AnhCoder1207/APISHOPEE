@@ -1,7 +1,7 @@
-import { rm } from 'node:fs/promises'
+import { mkdir } from 'node:fs/promises'
 import { build } from 'esbuild'
 
-await rm('dist', { recursive: true, force: true })
+await mkdir('dist', { recursive: true })
 await build({
   entryPoints: ['src/server.ts'],
   bundle: true,

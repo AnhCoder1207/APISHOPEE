@@ -11,7 +11,7 @@
 - Báo cáo chuyển đổi, đồng bộ dữ liệu và xuất CSV.
 - API key có thể thu hồi cho bot hoặc hệ thống bên ngoài.
 - Quota theo tháng, audit usage và rate limit đăng nhập.
-- Giao diện responsive cho desktop và mobile.
+- Frontend Vite + React, API Hono, giao diện responsive cho desktop và mobile.
 
 ## Cài đặt
 
@@ -49,13 +49,22 @@ Nếu endpoint trực tiếp `db.<project>.supabase.co` không truy cập đư�
 postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres?sslmode=require
 ```
 
-## Chạy local bằng Node.js
+## Chạy local
 
 ```bash
 npm run dev
 ```
 
-Mở `http://localhost:8787`.
+Lệnh này chạy API Hono tại `http://localhost:8787` và Vite tại `http://localhost:5173`. Mở `http://localhost:5173` để dùng giao diện; Vite proxy toàn bộ `/api` sang API local.
+
+Build production local:
+
+```bash
+npm run build
+npm start
+```
+
+Build tạo frontend tại `dist/web` và server Node tại `dist/server.js`. Khi chạy `npm start`, server phục vụ cả hai tại `http://localhost:8787`.
 
 Worker local vẫn có thể chạy riêng bằng `npm run dev:worker`, nhưng không bắt buộc nếu bạn triển khai trên máy chủ Node.js.
 
@@ -128,26 +137,9 @@ npm run build
 npm start
 ```
 
-## Triển khai Vercel
+## Triển khai nền tảng khác
 
-Dự án có sẵn Vercel Function tại `api/index.ts` và rewrite API trong `vercel.json`.
-
-Thiết lập dự án trên Vercel:
-
-- Application Preset: `Hono`
-- Root Directory: `./`
-- Build Command: để `None`
-- Output Directory: để `N/A`
-- Install Command: `npm install`
-- Node.js Version: `22.x`
-
-Thêm các Environment Variables: `SHOPEE_BASE_API`, `DATABASE_URL`,
-`COOKIE_ENCRYPTION_KEY`, `SESSION_COOKIE_NAME`, `APP_URL` và `SERVER_URL`. Không
-thêm `PORT` hoặc `HOST`. Với Supabase, ưu tiên chuỗi kết nối Transaction pooler
-cho môi trường serverless. `COOKIE_ENCRYPTION_KEY` phải giống khóa đang dùng nếu
-muốn đọc lại các cookie đã lưu trước đó.
-
-Ứng dụng lắng nghe `0.0.0.0:8787` theo mặc định. Nền tảng triển khai có thể ghi đè bằng `HOST` và `PORT`. Endpoint health check là `/api/health`.
+Frontend là thư mục tĩnh sau build (`dist/web`), còn API là Node server (`dist/server.js`). Có thể phục vụ chung bằng Docker hoặc tách frontend tĩnh và API tùy nền tảng. Luôn cấu hình các biến `SHOPEE_BASE_API`, `DATABASE_URL`, `COOKIE_ENCRYPTION_KEY`, `SESSION_COOKIE_NAME`, `APP_URL` và `SERVER_URL`; endpoint health check là `/api/health`.
 
 Production phải đặt sau HTTPS vì session cookie có cờ `Secure`. Chỉ đặt `TRUST_PROXY=true` khi ứng dụng nằm sau reverse proxy đáng tin cậy có quản lý `X-Forwarded-For`.
 

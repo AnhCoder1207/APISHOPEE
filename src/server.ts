@@ -11,14 +11,14 @@ config({ path: envFile, quiet: true })
 
 const app = new Hono<AppBindings>()
 const staticFiles = serveStatic<AppBindings>({
-  root: './public',
+  root: './dist/web',
   onFound: (path, c) => {
-    const revalidate = path.endsWith('index.html') || path.endsWith('app.js') || path.endsWith('styles.css')
+    const revalidate = path.endsWith('index.html')
     c.header('Cache-Control', revalidate ? 'no-cache' : 'public, max-age=3600')
   },
 })
 const spaFallback = serveStatic<AppBindings>({
-  path: './public/index.html',
+  path: './dist/web/index.html',
   onFound: (_path, c) => c.header('Cache-Control', 'no-cache'),
 })
 
