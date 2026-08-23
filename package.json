@@ -1,0 +1,33 @@
+{
+  "name": "camlink-affiliate-saas",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.dev.vars --import tsx src/server.ts",
+    "dev:worker": "wrangler dev",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/server.js",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "node scripts/migrate.mjs",
+    "admin:grant": "node scripts/set-admin.mjs grant",
+    "admin:revoke": "node scripts/set-admin.mjs revoke",
+    "deploy:cloudflare": "npm run typecheck && wrangler secret bulk .env.production && wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "@hono/swagger-ui": "^0.6.1",
+    "@hono/zod-openapi": "^1.6.1",
+    "dotenv": "^17.4.2",
+    "hono": "^4.13.3",
+    "postgres": "^3.4.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.110.0"
+  }
+}

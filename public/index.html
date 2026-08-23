@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tạo link Shopee Affiliate, xem đơn hàng, theo dõi hoa hồng và dùng API trên cùng một trang." />
+    <meta name="theme-color" content="#17231f" />
+    <title>CamLink - Công cụ Shopee Affiliate</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=20260823-5" />
+    <script type="module" src="/app.js?v=20260823-5"></script>
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></symbol>
+      <symbol id="icon-receipt" viewBox="0 0 24 24"><path d="M5 3v18l3-2 4 2 4-2 3 2V3l-3 2-4-2-4 2-3-2Z"/><path d="M9 9h6M9 13h6"/></symbol>
+      <symbol id="icon-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5"/><path d="M5 13v7h14v-7M9 20v-5h6v5"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></symbol>
+      <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M15 8l3 3M17 6l2 2"/></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M10.3 3.7 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+      <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5.2-3.4 8.6-8 10-4.6-1.4-8-4.8-8-10V6l8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    </svg>
+
+    <div id="landing-view">
+      <header class="landing-header">
+        <a class="brand" href="#top" aria-label="CamLink trang chủ"><span class="brand-mark">C</span><span><strong>CamLink</strong><small>Công cụ Shopee Affiliate</small></span></a>
+        <nav class="landing-nav" aria-label="Điều hướng trang giới thiệu"><a href="#features">Tính năng</a><a href="#security">Bảo mật</a><a href="#pricing">Gói sử dụng</a></nav>
+        <div class="landing-actions"><button class="button button-ghost" type="button" data-auth-mode="login">Đăng nhập</button><button class="button button-primary" type="button" data-auth-mode="register">Dùng thử miễn phí</button></div>
+      </header>
+
+      <main id="top">
+        <section class="hero-section">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Công cụ dành cho Shopee Affiliate</span>
+            <h1>Tạo link nhanh. Theo dõi <em>đơn và hoa hồng</em> gọn hơn.</h1>
+            <p>Dán link sản phẩm để lấy link affiliate, xem báo cáo đơn hàng và gọi API khi cần. Nhập file cookie một lần, không phải dán lại ở mỗi lần gọi API.</p>
+            <div class="hero-actions"><button class="button button-primary button-large" type="button" data-auth-mode="register">Dùng thử CamLink</button><a class="text-link" href="#features">Xem các tính năng <span aria-hidden="true">→</span></a></div>
+            <div class="trust-line"><span><b>5 link</b> mỗi lượt</span><span><b>2.000</b> lượt gọi/tháng</span><span><b>Mã hóa</b> cookie trước khi lưu</span></div>
+          </div>
+
+          <div class="hero-product reveal reveal-delay">
+            <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
+            <div class="product-window">
+              <div class="product-window-top"><span class="window-dots"><i></i><i></i><i></i></span><span>camlink.app/tong-quan</span><span class="live-dot">Đã kết nối</span></div>
+              <div class="product-window-body">
+                <div class="mini-sidebar"><span class="mini-logo">C</span><i class="active"></i><i></i><i></i><i></i></div>
+                <div class="mini-dashboard">
+                  <div class="mini-heading"><span><small>Dữ liệu mới nhất</small><strong>Hoạt động hôm nay</strong></span><button type="button">+ Tạo link</button></div>
+                  <div class="mini-metrics"><article><span>Hoa hồng dự kiến</span><b>2.480.000đ</b><small>↑ 18,4%</small></article><article><span>Đơn ghi nhận</span><b>126</b><small>↑ 12 đơn</small></article><article><span>Đơn hợp lệ</span><b>82,5%</b><small>↑ 2,1%</small></article></div>
+                  <div class="mini-chart"><div class="mini-chart-head"><strong>Hoa hồng theo ngày</strong><span>7 ngày</span></div><div class="mini-bars"><i class="bar-37"></i><i class="bar-52"></i><i class="bar-46"></i><i class="bar-70"></i><i class="highlight bar-91"></i><i class="bar-65"></i><i class="bar-76"></i></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="problem-strip"><p>Không cần <s>mở Swagger, dán cookie rồi tự lọc JSON</s> mỗi lần làm việc.</p><strong>Những việc thường dùng đã có sẵn trên giao diện.</strong></section>
+
+        <section class="feature-section" id="features">
+          <div class="section-intro"><span class="eyebrow">Các tính năng chính</span><h2>Những việc làm mỗi ngày,<br />gom vào một chỗ.</h2></div>
+          <div class="feature-grid">
+            <article class="feature-large feature-orange"><span class="feature-number">01</span><h3>Tạo link affiliate</h3><p>Dán từ 1 đến 5 link Shopee, thêm Sub ID nếu cần và sao chép link kết quả ngay trên trang.</p><div class="link-demo"><span>shopee.vn/product/...</span><b>→</b><strong>s.shopee.vn/8fDxyz</strong></div></article>
+            <article><span class="feature-number">02</span><h3>Xem đơn và hoa hồng</h3><p>Lọc theo ngày, mã đơn hoặc trạng thái. Số tiền được hiển thị sẵn theo định dạng Việt Nam.</p><div class="status-demo"><span>Hoàn thành</span><span>Chờ xử lý</span><span>Đã hủy</span></div></article>
+            <article><span class="feature-number">03</span><h3>Nhập cookie bằng file JSON</h3><p>Tải file xuất từ J2TEAM Cookies lên một lần. CamLink lọc cookie Shopee cần dùng rồi mã hóa trước khi lưu.</p><div class="cipher-demo">v1.••••••••••••.••••••••••••••••</div></article>
+            <article class="feature-large feature-dark"><span class="feature-number">04</span><h3>Dùng API cho bot và công cụ riêng</h3><p>Tạo API key riêng, theo dõi hạn mức và thu hồi key bất cứ lúc nào khi không còn sử dụng.</p><pre><code>Authorization: Bearer clk_live_••••<br />POST /api/v1/affiliate/convert-link</code></pre></article>
+          </div>
+        </section>
+
+        <section class="security-section" id="security">
+          <div><span class="eyebrow">Bảo vệ phiên đăng nhập</span><h2>Cookie được xem là<br />dữ liệu nhạy cảm.</h2></div>
+          <div class="security-list"><article><b>01</b><span><strong>Chỉ giữ cookie Shopee cần thiết</strong><small>File JSON được kiểm tra tên miền, thời hạn và các cookie đăng nhập bắt buộc trước khi lưu.</small></span></article><article><b>02</b><span><strong>Mã hóa trong cơ sở dữ liệu</strong><small>Dữ liệu được mã hóa bằng AES-GCM với khóa riêng nằm ngoài cơ sở dữ liệu.</small></span></article><article><b>03</b><span><strong>Không hiển thị lại cookie</strong><small>Trình duyệt chỉ nhận tên tài khoản, trạng thái kết nối và thời điểm kiểm tra gần nhất.</small></span></article></div>
+        </section>
+
+        <section class="pricing-section" id="pricing"><div><span class="eyebrow">Dùng thử ngay</span><h2>Starter</h2><p>Phù hợp để vận hành một tài khoản affiliate và kiểm tra toàn bộ quy trình.</p></div><div class="price-block"><strong>2.000</strong><span>lượt gọi Shopee mỗi tháng</span></div><ul><li>Tạo link và xem báo cáo trên web</li><li>Lưu lịch sử link, đơn hàng trong 30 ngày</li><li>Tạo và thu hồi API key khi cần</li></ul><button class="button button-primary button-large" type="button" data-auth-mode="register">Tạo tài khoản miễn phí</button></section>
+      </main>
+
+      <footer class="landing-footer"><a class="brand" href="#top"><span class="brand-mark">C</span><span><strong>CamLink</strong><small>Công cụ Shopee Affiliate</small></span></a><p>CamLink là công cụ độc lập, không phải sản phẩm chính thức của Shopee. Tính năng có thể thay đổi khi Shopee cập nhật hệ thống Affiliate.</p><span>© 2026 CamLink</span></footer>
+    </div>
+
+    <div id="workspace-view" hidden>
+      <aside class="app-sidebar" id="app-sidebar">
+        <a class="brand brand-inverse" href="#dashboard" data-view="dashboard"><span class="brand-mark">C</span><span><strong>CamLink</strong><small>Affiliate workspace</small></span></a>
+        <nav class="app-nav" aria-label="Điều hướng ứng dụng"><button type="button" class="active" data-view="dashboard"><svg><use href="#icon-grid"></use></svg><span>Tổng quan</span></button><button type="button" data-view="convert"><svg><use href="#icon-link"></use></svg><span>Tạo link</span></button><button type="button" data-view="reports"><svg><use href="#icon-receipt"></use></svg><span>Đơn hàng</span></button><button type="button" data-view="connections"><svg><use href="#icon-store"></use></svg><span>Tài khoản Shopee</span></button><button type="button" data-view="api-keys"><svg><use href="#icon-key"></use></svg><span>API key</span></button><button type="button" data-view="admin" id="admin-nav-button" hidden><svg><use href="#icon-shield"></use></svg><span>Quản trị hệ thống</span></button></nav>
+        <div class="usage-box"><div><span>Gói Starter</span><b id="usage-percent">0%</b></div><div class="usage-meter"><i id="usage-meter-bar"></i></div><small id="usage-copy">0 / 2.000 lượt gọi tháng này</small></div>
+        <button class="sidebar-user" type="button" id="logout-button"><span class="avatar" id="sidebar-avatar">U</span><span><b id="sidebar-name">Người dùng</b><small id="sidebar-role">Đăng xuất</small></span><svg><use href="#icon-logout"></use></svg></button>
+      </aside>
+
+      <main class="app-main">
+        <header class="app-topbar"><button class="menu-button" type="button" id="menu-button" aria-label="Mở menu"><svg><use href="#icon-menu"></use></svg></button><div><h1 id="page-title">Tổng quan hôm nay</h1><p id="page-subtitle">Theo dõi hoạt động Shopee Affiliate của bạn.</p></div><button class="button button-primary top-create-button" id="top-create-button" type="button" data-view="convert"><svg><use href="#icon-plus"></use></svg>Tạo link</button></header>
+        <div class="connection-alert" id="connection-alert" hidden><svg><use href="#icon-alert"></use></svg><span id="connection-alert-copy"></span><button type="button" data-view="connections">Xử lý ngay</button></div>
+
+        <section class="app-panel active" data-panel="dashboard">
+          <div class="metric-grid"><article class="metric-card"><span>Hoa hồng dự kiến</span><strong id="metric-commission">0đ</strong><small>30 ngày gần nhất</small></article><article class="metric-card"><span>Đơn hàng ghi nhận</span><strong id="metric-orders">0</strong><small id="metric-conversions">0 lượt chuyển đổi</small></article><article class="metric-card"><span>Link đã tạo</span><strong id="metric-links">0</strong><small>Trong lịch sử gần đây</small></article><article class="metric-card"><span>Hạn mức còn lại</span><strong id="metric-quota">0</strong><small>Được làm mới đầu tháng</small></article></div>
+          <div class="dashboard-grid"><article class="surface chart-surface"><div class="surface-head"><span><h2>Hoa hồng theo ngày</h2><p>7 ngày gần nhất, theo dữ liệu đã đồng bộ.</p></span><span class="soft-label">UTC+7</span></div><div class="dashboard-chart" id="dashboard-chart" aria-label="Biểu đồ hoa hồng 7 ngày"></div></article><article class="surface"><div class="surface-head"><span><h2>Tài khoản đang dùng</h2><p>Nguồn dữ liệu Shopee mặc định.</p></span></div><div id="dashboard-connection"></div></article></div>
+          <article class="surface table-surface"><div class="surface-head"><span><h2>Link gần đây</h2><p>Kết quả chuyển đổi mới nhất của workspace.</p></span><button class="quiet-button" type="button" data-view="convert">Xem lịch sử</button></div><div class="table-wrap"><table><thead><tr><th>Link gốc</th><th>Link affiliate</th><th>Thời gian</th><th></th></tr></thead><tbody id="dashboard-links-body"></tbody></table></div></article>
+        </section>
+
+        <section class="app-panel" data-panel="convert">
+          <div class="two-column-layout"><form class="surface form-surface" id="convert-form"><div class="surface-head"><span><h2>Tạo link affiliate hàng loạt</h2><p>Mỗi link một dòng, tối đa 5 link Shopee.</p></span></div><label>Tài khoản Shopee<select id="convert-connection" name="connectionId" required></select></label><label>Link sản phẩm<textarea name="links" rows="7" placeholder="https://shopee.vn/product/..." required></textarea><small>Hỗ trợ shopee.vn, s.shopee.vn và shope.ee.</small></label><div class="form-grid"><label>Sub ID 1<input name="subId1" maxlength="100" pattern="[A-Za-z0-9]*" title="Chỉ dùng chữ và số" placeholder="facebookreels" /></label><label>Sub ID 2<input name="subId2" maxlength="100" pattern="[A-Za-z0-9]*" title="Chỉ dùng chữ và số" placeholder="campaign2308" /></label><label>Sub ID 3<input name="subId3" maxlength="100" pattern="[A-Za-z0-9]*" title="Chỉ dùng chữ và số" placeholder="Tùy chọn" /></label><label>Sub ID 4<input name="subId4" maxlength="100" pattern="[A-Za-z0-9]*" title="Chỉ dùng chữ và số" placeholder="Tùy chọn" /></label></div><button class="button button-primary button-block" type="submit">Tạo link affiliate</button></form><article class="surface result-surface"><div class="surface-head"><span><h2>Kết quả</h2><p>Link thành công sẽ được lưu tự động.</p></span><span class="soft-label" id="result-count">Chưa có dữ liệu</span></div><div class="result-list empty-state" id="convert-results"><svg><use href="#icon-link"></use></svg><strong>Sẵn sàng tạo link</strong><p>Kết quả rút gọn sẽ xuất hiện tại đây.</p></div></article></div>
+          <article class="surface table-surface"><div class="surface-head"><span><h2>Lịch sử tạo link</h2><p>Tối đa 100 kết quả gần nhất.</p></span><button class="quiet-button" type="button" id="refresh-history">Làm mới</button></div><div class="table-wrap"><table><thead><tr><th>Link gốc</th><th>Link affiliate</th><th>Sub ID 1</th><th>Tài khoản</th><th>Thời gian</th><th></th></tr></thead><tbody id="link-history-body"></tbody></table></div></article>
+        </section>
+
+        <section class="app-panel" data-panel="reports">
+          <form class="surface filter-bar" id="report-form"><label>Tài khoản<select id="report-connection" name="connectionId" required></select></label><label>Từ ngày<input type="date" name="startDate" required /></label><label>Đến ngày<input type="date" name="endDate" required /></label><label>Trạng thái<select name="status"><option value="">Tất cả</option><option value="1">Chờ xử lý</option><option value="2">Hoàn thành</option><option value="3">Đã hủy</option><option value="4">Chưa thanh toán</option></select></label><label>Mã đơn<input name="orderId" placeholder="Tùy chọn" /></label><button class="button button-primary" type="submit">Lấy báo cáo</button></form>
+          <div class="report-metrics"><article class="metric-card"><span>Tổng giá trị</span><strong id="report-value">0đ</strong></article><article class="metric-card"><span>Hoa hồng dự kiến</span><strong id="report-commission">0đ</strong></article><article class="metric-card"><span>Lượt chuyển đổi</span><strong id="report-count">0</strong></article></div>
+          <article class="surface table-surface"><div class="surface-head"><span><h2>Báo cáo chuyển đổi</h2><p id="report-caption">Chọn khoảng ngày để tải dữ liệu trực tiếp từ Shopee.</p></span><button class="quiet-button" type="button" id="export-report" disabled><svg><use href="#icon-download"></use></svg>Xuất CSV</button></div><div class="table-wrap"><table><thead><tr><th>Checkout</th><th>Ngày mua</th><th>Nguồn / Sub ID</th><th>Đơn hàng</th><th>Giá trị</th><th>Hoa hồng</th><th>Trạng thái</th></tr></thead><tbody id="report-body"><tr><td colspan="7" class="empty-cell">Chưa có dữ liệu báo cáo.</td></tr></tbody></table></div></article>
+        </section>
+
+        <section class="app-panel" data-panel="connections">
+          <div class="panel-intro"><span><h2>Tài khoản Shopee Affiliate</h2><p>Xuất cookie bằng J2TEAM Cookies rồi tải file JSON lên; CamLink tự lọc và mã hóa trước khi lưu.</p></span><button class="button button-primary" type="button" id="add-connection-button"><svg><use href="#icon-plus"></use></svg>Thêm tài khoản</button></div><div class="connection-grid" id="connection-grid"></div><article class="cookie-guide"><span class="guide-index">J2</span><div><h3>Cách lấy cookie an toàn</h3><ol><li>Đăng nhập tại affiliate.shopee.vn.</li><li>Mở extension J2TEAM Cookies và xuất cookies thành file JSON.</li><li>Vào CamLink, bấm “Thêm tài khoản Shopee” rồi chọn file vừa tải.</li><li>CamLink chỉ giữ header cookie đã mã hóa; file JSON không được lưu lại.</li></ol><p>Cookie là thông tin đăng nhập. Không gửi file cho người khác và hãy xóa file khỏi thư mục Downloads sau khi import.</p></div></article>
+        </section>
+
+        <section class="app-panel" data-panel="api-keys">
+          <div class="panel-intro"><span><h2>API key cho hệ thống riêng</h2><p>Mỗi key chỉ hiển thị đầy đủ một lần và có thể thu hồi ngay lập tức.</p></span><button class="button button-primary" type="button" id="create-key-button"><svg><use href="#icon-plus"></use></svg>Tạo API key</button></div><div class="api-layout"><article class="surface"><div class="surface-head"><span><h2>Key đang hoạt động</h2><p>Không lưu API key ở frontend hoặc repository công khai.</p></span></div><div id="api-key-list" class="key-list"></div></article><article class="surface api-doc"><div class="surface-head"><span><h2>Gọi API đổi link</h2><p>Sử dụng tài khoản Shopee mặc định nếu bỏ qua connectionId.</p></span></div><pre><code>curl -X POST https://your-domain/api/v1/affiliate/convert-link \
+  -H "Authorization: Bearer clk_live_..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "originalLinks": ["https://shopee.vn/product/..."],
+    "subId1": "facebook_reels"
+  }'</code></pre><p class="api-note">Endpoint báo cáo: <code>POST /api/v1/affiliate/conversion-reports</code></p></article></div>
+        </section>
+
+        <section class="app-panel admin-panel" data-panel="admin">
+          <div class="admin-banner"><span><small>System console</small><h2>Trung tâm vận hành CamLink</h2><p>Quản lý truy cập, workspace, quota và sức khỏe kết nối mà không chạm vào dữ liệu bí mật của khách hàng.</p></span><button class="button admin-refresh-button" type="button" id="admin-refresh-button">Làm mới dữ liệu</button></div>
+          <div class="metric-grid admin-metric-grid"><article class="metric-card"><span>Tổng người dùng</span><strong id="admin-total-users">0</strong><small id="admin-new-users">0 mới trong 30 ngày</small></article><article class="metric-card"><span>Người dùng hoạt động</span><strong id="admin-active-users">0</strong><small id="admin-suspended-users">0 đang bị khóa</small></article><article class="metric-card"><span>Workspace hoạt động</span><strong id="admin-active-workspaces">0</strong><small id="admin-total-workspaces">0 workspace tổng cộng</small></article><article class="metric-card"><span>Lượt gọi tháng này</span><strong id="admin-usage-month">0</strong><small>Toàn hệ thống</small></article><article class="metric-card"><span>Kết nối Shopee</span><strong id="admin-active-connections">0</strong><small>Đang hoạt động</small></article><article class="metric-card"><span>API key hoạt động</span><strong id="admin-active-api-keys">0</strong><small>Chưa bị thu hồi</small></article></div>
+          <article class="surface admin-growth-surface"><div class="surface-head"><span><h2>Người dùng mới</h2><p>14 ngày gần nhất.</p></span><span class="soft-label" id="admin-plan-summary">Starter 0 · Pro 0 · Business 0</span></div><div class="admin-spark-bars" id="admin-signup-chart"></div></article>
+
+          <article class="surface admin-section"><div class="surface-head"><span><h2>Người dùng</h2><p>Khóa tài khoản, quản lý quyền admin và thu hồi toàn bộ phiên đăng nhập.</p></span><form class="admin-filter" id="admin-user-filter"><input name="query" placeholder="Tên hoặc email" /><select name="status"><option value="all">Mọi trạng thái</option><option value="active">Hoạt động</option><option value="suspended">Bị khóa</option></select><button class="button button-primary" type="submit">Lọc</button></form></div><div class="table-wrap"><table><thead><tr><th>Người dùng</th><th>Quyền</th><th>Trạng thái</th><th>Workspace</th><th>Phiên</th><th>Hoạt động cuối</th><th>Thao tác</th></tr></thead><tbody id="admin-users-body"></tbody></table></div><div class="admin-pagination"><button type="button" data-admin-page="users" data-page-direction="-1">Trang trước</button><span id="admin-users-page">Trang 1 / 1</span><button type="button" data-admin-page="users" data-page-direction="1">Trang sau</button></div></article>
+
+          <article class="surface admin-section"><div class="surface-head"><span><h2>Workspace & gói dịch vụ</h2><p>Điều chỉnh plan, quota hoặc tạm khóa toàn bộ workspace.</p></span><form class="admin-filter" id="admin-workspace-filter"><input name="query" placeholder="Workspace hoặc chủ sở hữu" /><select name="status"><option value="all">Mọi trạng thái</option><option value="active">Hoạt động</option><option value="suspended">Tạm khóa</option></select><select name="plan"><option value="all">Mọi gói</option><option value="starter">Starter</option><option value="pro">Pro</option><option value="business">Business</option></select><button class="button button-primary" type="submit">Lọc</button></form></div><div class="table-wrap"><table><thead><tr><th>Workspace</th><th>Chủ sở hữu</th><th>Gói</th><th>Quota tháng</th><th>Đã dùng</th><th>Tài nguyên</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody id="admin-workspaces-body"></tbody></table></div><div class="admin-pagination"><button type="button" data-admin-page="workspaces" data-page-direction="-1">Trang trước</button><span id="admin-workspaces-page">Trang 1 / 1</span><button type="button" data-admin-page="workspaces" data-page-direction="1">Trang sau</button></div></article>
+
+          <article class="surface admin-section"><div class="surface-head"><span><h2>Kết nối Shopee</h2><p>Chỉ hiển thị metadata và trạng thái; cookie mã hóa không bao giờ được trả về.</p></span><form class="admin-filter" id="admin-connection-filter"><input name="query" placeholder="Tài khoản, workspace hoặc email" /><select name="status"><option value="all">Mọi trạng thái</option><option value="connected">Đang kết nối</option><option value="expired">Hết hạn</option><option value="error">Có lỗi</option></select><button class="button button-primary" type="submit">Lọc</button></form></div><div class="table-wrap"><table><thead><tr><th>Tài khoản</th><th>Workspace</th><th>Affiliate</th><th>Trạng thái</th><th>Lỗi gần nhất</th><th>Kiểm tra cuối</th></tr></thead><tbody id="admin-connections-body"></tbody></table></div><div class="admin-pagination"><button type="button" data-admin-page="connections" data-page-direction="-1">Trang trước</button><span id="admin-connections-page">Trang 1 / 1</span><button type="button" data-admin-page="connections" data-page-direction="1">Trang sau</button></div></article>
+
+          <article class="surface admin-section"><div class="surface-head"><span><h2>Nhật ký quản trị</h2><p>Mọi thay đổi quyền, trạng thái, plan, quota và lần thu hồi đều được ghi lại.</p></span><button class="quiet-button" type="button" id="admin-refresh-audit">Làm mới</button></div><div class="table-wrap"><table><thead><tr><th>Thời gian</th><th>Admin</th><th>Hành động</th><th>Đối tượng</th><th>Chi tiết</th></tr></thead><tbody id="admin-audit-body"></tbody></table></div><div class="admin-pagination"><button type="button" data-admin-page="audit" data-page-direction="-1">Trang trước</button><span id="admin-audit-page">Trang 1 / 1</span><button type="button" data-admin-page="audit" data-page-direction="1">Trang sau</button></div></article>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="modal" id="auth-dialog"><button class="modal-close" type="button" data-close-dialog="auth-dialog" aria-label="Đóng">×</button><div class="auth-modal-brand"><span class="brand-mark">C</span><span><strong>CamLink</strong><small>Affiliate workspace</small></span></div><div class="auth-tabs"><button type="button" class="active" data-auth-tab="login">Đăng nhập</button><button type="button" data-auth-tab="register">Tạo tài khoản</button></div><form id="login-form" class="modal-form"><h2>Chào mừng trở lại</h2><p>Tiếp tục quản lý link và báo cáo của bạn.</p><label>Email<input type="email" name="email" autocomplete="email" required /></label><label>Mật khẩu<input type="password" name="password" autocomplete="current-password" required /></label><button class="button button-primary button-block" type="submit">Đăng nhập</button></form><form id="register-form" class="modal-form" hidden><h2>Tạo workspace mới</h2><p>Không cần thẻ thanh toán để bắt đầu.</p><label>Tên hiển thị<input name="name" autocomplete="name" minlength="2" required /></label><label>Email<input type="email" name="email" autocomplete="email" required /></label><label>Mật khẩu<input type="password" name="password" autocomplete="new-password" minlength="10" required /><small>Tối thiểu 10 ký tự.</small></label><button class="button button-primary button-block" type="submit">Tạo tài khoản</button></form></dialog>
+    <dialog class="modal" id="connection-dialog"><button class="modal-close" type="button" data-close-dialog="connection-dialog" aria-label="Đóng">×</button><form id="connection-form" class="modal-form"><h2 id="connection-dialog-title">Thêm tài khoản Shopee</h2><p>CamLink sẽ đọc file J2TEAM Cookies, kiểm tra với Shopee rồi mã hóa header trước khi lưu.</p><input type="hidden" name="connectionId" /><label>Tên tài khoản<input name="name" placeholder="Nguyễn An Affiliate" minlength="2" required /></label><label>File cookie JSON<div class="cookie-file-drop"><input id="connection-cookie-file" class="cookie-file-input" type="file" name="cookieJson" accept=".json,application/json" required /><span class="cookie-file-icon"><svg><use href="#icon-download"></use></svg></span><span><strong id="cookie-file-name">Chưa chọn file JSON</strong><small id="cookie-file-summary">File chỉ được đọc trong trình duyệt rồi gửi an toàn tới máy chủ.</small></span></div><small>Chỉ hỗ trợ file xuất từ J2TEAM Cookies cho affiliate.shopee.vn. File gốc không được lưu.</small></label><label class="check-label"><input type="checkbox" name="isDefault" /> Đặt làm tài khoản mặc định</label><button class="button button-primary button-block" type="submit">Kiểm tra và lưu</button></form></dialog>
+    <dialog class="modal modal-small" id="key-dialog"><button class="modal-close" type="button" data-close-dialog="key-dialog" aria-label="Đóng">×</button><form id="key-form" class="modal-form"><h2>Tạo API key</h2><p>Đặt tên theo ứng dụng sẽ sử dụng key này.</p><label>Tên API key<input name="name" placeholder="Bot đăng bài" minlength="2" required /></label><button class="button button-primary button-block" type="submit">Tạo key</button></form><div id="key-reveal" hidden><h2>API key đã tạo</h2><p>Sao chép ngay. Bạn sẽ không thể xem lại toàn bộ key.</p><div class="secret-reveal"><code id="new-api-key"></code><button class="icon-button" type="button" data-copy-target="new-api-key" aria-label="Sao chép API key"><svg><use href="#icon-copy"></use></svg></button></div><button class="button button-primary button-block" type="button" data-close-dialog="key-dialog">Tôi đã lưu key</button></div></dialog>
+    <dialog class="modal modal-small" id="admin-workspace-dialog"><button class="modal-close" type="button" data-close-dialog="admin-workspace-dialog" aria-label="Đóng">×</button><form id="admin-workspace-form" class="modal-form"><h2>Điều chỉnh workspace</h2><p id="admin-workspace-dialog-copy">Cập nhật gói, quota và trạng thái vận hành.</p><input type="hidden" name="workspaceId" /><label>Gói dịch vụ<select name="plan"><option value="starter">Starter</option><option value="pro">Pro</option><option value="business">Business</option></select></label><label>Hạn mức tháng<input type="number" name="monthlyQuota" min="0" max="10000000" required /></label><label>Trạng thái<select name="status"><option value="active">Hoạt động</option><option value="suspended">Tạm khóa</option></select><small>Tạm khóa sẽ thu hồi các phiên đăng nhập đang hoạt động.</small></label><button class="button button-primary button-block" type="submit">Lưu thay đổi</button></form></dialog>
+
+    <div class="toast-region" id="toast-region" aria-live="polite"></div><div class="loading-overlay" id="loading-overlay" hidden><span class="loader"></span><p id="loading-copy">Đang xử lý...</p></div>
+  </body>
+</html>
